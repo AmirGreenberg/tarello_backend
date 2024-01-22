@@ -17,7 +17,7 @@ export const boardService = {
 
 async function query() {
     try {
-        const collection = await dbService.getCollection('board');
+        const collection = await dbService.getCollection('boardamir');
         const boards = await collection.find({}).toArray();
         return boards;
     } catch (err) {
@@ -28,7 +28,7 @@ async function query() {
 
 async function getBoardById(boardId) {
     try {
-        const collection = await dbService.getCollection('board');
+        const collection = await dbService.getCollection('boardamir');
         const board = collection.findOne({ _id: new ObjectId(boardId) });
         return board;
     } catch (err) {
@@ -39,7 +39,7 @@ async function getBoardById(boardId) {
 
 async function remove(boardId) {
     try {
-        const collection = await dbService.getCollection('board')
+        const collection = await dbService.getCollection('boardamir')
         await collection.deleteOne({ _id: new ObjectId(boardId) })
     } catch (err) {
         logger.error(`cannot remove board ${boardId}`, err)
@@ -49,7 +49,7 @@ async function remove(boardId) {
 
 async function add(board) {
     try {
-        const collection = await dbService.getCollection('board')
+        const collection = await dbService.getCollection('boardamir')
         await collection.insertOne(board)
         return board
     } catch (err) {
@@ -60,11 +60,11 @@ async function add(board) {
 
 async function update(board) {
     try {
-        const boardToSave = {...board}
+        const boardToSave = { ...board }
         delete boardToSave._id
 
-    
-        const collection = await dbService.getCollection('board')
+
+        const collection = await dbService.getCollection('boardamir')
         await collection.updateOne({ _id: new ObjectId(board._id) }, { $set: boardToSave })
         return board
     } catch (err) {
@@ -76,7 +76,7 @@ async function update(board) {
 // async function addBoardMsg(boardId, msg) {
 //     try {
 //         msg.id = utilService.makeId()
-//         const collection = await dbService.getCollection('board')
+//         const collection = await dbService.getCollection('boardamir')
 //         await collection.updateOne({ _id: new ObjectId(boardId) }, { $push: { msgs: msg } })
 //         return msg
 //     } catch (err) {
@@ -87,7 +87,7 @@ async function update(board) {
 
 // async function removeBoardMsg(boardId, msgId) {
 //     try {
-//         const collection = await dbService.getCollection('board')
+//         const collection = await dbService.getCollection('boardamir')
 //         await collection.updateOne({ _id: new ObjectId(boardId) }, { $pull: { msgs: { id: msgId } } })
 //         return msgId
 //     } catch (err) {
