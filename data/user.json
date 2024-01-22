@@ -1,0 +1,82 @@
+[
+    {
+        "_id": "u101",
+        "fullname": "Dan Avi",
+        "username": "user1@example.com",
+        "password": "p1",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=male",
+        "mentions": []
+    },
+    {
+        "_id": "u102",
+        "fullname": "Shani Ban",
+        "username": "user2@example.com",
+        "password": "p2",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=female",
+        "mentions": []
+    },
+    {
+        "_id": "u103",
+        "fullname": "Assaf Shen",
+        "username": "user3@example.com",
+        "password": "p3",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=male",
+        "mentions": []
+    },
+    {
+        "_id": "u104",
+        "fullname": "Maayan Ali",
+        "username": "user4@example.com",
+        "password": "p4",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=female",
+        "mentions": []
+    },
+    {
+        "_id": "u105",
+        "fullname": "Elisha Win",
+        "username": "user5@example.com",
+        "password": "p5",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=male",
+        "mentions": []
+    },
+    {
+        "_id": "u106",
+        "fullname": "Idit Gadi",
+        "username": "user6@example.com",
+        "password": "p6",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=female",
+        "mentions": []
+    },
+    {
+        "_id": "u107",
+        "fullname": "Alon Gev",
+        "username": "user7@example.com",
+        "password": "p7",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=male",
+        "mentions": []
+    },
+    {
+        "_id": "u108",
+        "fullname": "Jasmin Jari",
+        "username": "user8@example.com",
+        "password": "p8",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=female",
+        "mentions": []
+    },
+    {
+        "_id": "u109",
+        "fullname": "Ron Mich",
+        "username": "user9@example.com",
+        "password": "p9",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=male",
+        "mentions": []
+    },
+    {
+        "_id": "u110",
+        "fullname": "Michal Ron",
+        "username": "user10@example.com",
+        "password": "p10",
+        "imgUrl": "http://xsgames.co/randomusers/avatar.php?g=female",
+        "mentions": []
+    }
+]

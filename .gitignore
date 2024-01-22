@@ -1,0 +1,4 @@
+node_modules
+private
+logs
+logs/backend.log
