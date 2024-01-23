@@ -9,7 +9,6 @@ export function setupSocketAPI(server) {
             origin: '*',
         }
     })
-    
     gIo.on('connection', socket => {
         logger.info(`New connected socket [id: ${socket.id}]`)
         socket.on('disconnect', socket => {
@@ -24,6 +23,20 @@ export function setupSocketAPI(server) {
             }
             socket.join(topic)
             socket.myTopic = topic
+        })
+
+        socket.on('joined-board', boardId => {
+            console.log('joined board', boardId)
+            if(socket.myBoardId === boardId) return
+            if (socket.myBoardId) {
+                socket.leave(socket.myBoardId)
+                logger.info(`Socket is leaving board ${socket.myBoardId} [id: ${socket.id}]`)
+            }
+ 
+            socket.join(boardId)
+            socket.myBoardId = boardId
+     
+ 
         })
 
         socket.on('chat-send-msg', msg => {
@@ -48,7 +61,9 @@ export function setupSocketAPI(server) {
             logger.info(`Removing socket.userId for socket [id: ${socket.id}]`)
             delete socket.userId
         })
- 
+
+
+
 
     })
 }
@@ -73,10 +88,8 @@ async function emitToUser({ type, data, userId }) {
 
 // If possible, send to all sockets BUT not the current socket 
 // Optionally, broadcast to a room / to all
-
-    async function broadcast({ type, data, room = null, userId }) {
-        console.log('userId', userId)
-    userId = userId?.toString()
+async function broadcast({ type, data, room = null, userId }) {
+    // userId = userId.toString()
 
     logger.info(`Broadcasting event: ${type}`)
     const excludedSocket = await _getUserSocket(userId)

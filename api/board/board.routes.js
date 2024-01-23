@@ -11,8 +11,8 @@ export const boardRoutes = express.Router()
 
 boardRoutes.get('/', log, getBoards)
 boardRoutes.get('/:id', getBoardById)
-boardRoutes.post('/', addBoard)
 boardRoutes.put('/', updateBoard)
+boardRoutes.post('/', addBoard)
 
 // boardRoutes.post('/', requireAuth, addBoard)
 // boardRoutes.put('/', requireAuth, updateBoard)
