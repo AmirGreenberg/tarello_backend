@@ -1,4 +1,4 @@
-import { dbUserName, dbPassword } from '../private/privateKeys.service.js';
+// import { dbUserName, dbPassword } from '../private/privateKeys.service.js';
 
 export default {
     dbURL: `mongodb+srv://${dbUserName}:${dbPassword}@tarello-amir.z5tdosx.mongodb.net/`,
